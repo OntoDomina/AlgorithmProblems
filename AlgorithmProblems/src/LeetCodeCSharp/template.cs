@@ -1,5 +1,5 @@
 
-namespace Solutions.🚧{    
+namespace Solutions.Template{    
 
 
     using System;

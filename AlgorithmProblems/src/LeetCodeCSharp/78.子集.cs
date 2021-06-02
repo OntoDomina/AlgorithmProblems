@@ -45,13 +45,45 @@
  * 
  */
 
-
 namespace Solutions.Subset78{    
     using System;
     using System.Collections.Generic;
     using System.Linq;
     using Solutions.HelpFunctions;
 // @lc code=start
+    public class Solution {
+        int[] mynums;
+        int nover2;
+        UInt16 n;
+
+        public IEnumerable<int> CorList(ushort X, ushort N){
+            UInt16 mask = 1;
+        
+            for(UInt16 i = 0 ; i < N; i++){
+                if( (mask & X) > 0) {yield return this.mynums[i];}
+                mask <<= 1;
+            }
+        }
+
+            
+        public IList<IList<int>> Subsets(int[] nums) {
+            n = (UInt16)nums.Length ;
+            nover2 = Math.Pow(2,n).ApplyMeTo(x => Math.Round(x + 0.5))
+                        .ApplyMeTo(Convert.ToInt32);
+            mynums = nums;
+            var intslist = new List<IList<int>>(nover2) ;
+            Enumerable.Range(0,nover2).ForEach(x => 
+                    {var z =  CorList((ushort)x, n);
+                    Console.WriteLine(x);
+                     intslist.Add(new List<int>(z)) ; 
+                    } );
+            return intslist;
+        }
+
+    }
+        
+
+// @lc code=end
         #region Helpfunctions
         #if LOCAL == false
         public static class HelpFunctions{
@@ -71,40 +103,6 @@ namespace Solutions.Subset78{
         }
         #endif
         #endregion 
-
-    public class Solution {
-        int[] mynums;
-        int nover2;
-        UInt16 n;
-
-        public IEnumerable<int> CorList(ushort X, ushort N){
-            UInt16 mask = 1;
-        
-            for(UInt16 i = 0 ; i < N; i++){
-                if( (mask & X) > 0) {yield return this.mynums[i];}
-                mask <<= 1;
-            }
-        }
-
-            
-            public IList<IList<int>> Subsets(int[] nums) {
-            n = (UInt16)nums.Length ;
-            nover2 = Math.Pow(2,n).ApplyMeTo(x => Math.Round(x + 0.5))
-                        .ApplyMeTo(Convert.ToInt32);
-            mynums = nums;
-            var intslist = new List<IList<int>>(nover2) ;
-            Enumerable.Range(0,nover2).ForEach(x => 
-                    {var z =  CorList((ushort)x, n);
-                    Console.WriteLine(x);
-                     intslist.Add(new List<int>(z)) ; 
-                    } );
-            return intslist;
-            
-            }
-        }
-        
-
-// @lc code=end
 
    }
 
