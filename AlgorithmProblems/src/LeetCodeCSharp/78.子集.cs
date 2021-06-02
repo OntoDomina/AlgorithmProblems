@@ -47,8 +47,6 @@
 
 
 namespace Solutions.Subset78{    
-
-
     using System;
     using System.Collections.Generic;
     using System.Linq;
