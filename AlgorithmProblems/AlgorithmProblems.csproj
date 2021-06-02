@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp5</TargetFramework>
+    <DefineConstants>LOCAL</DefineConstants>
+    <ApplicationIcon />
+    <StartupObject />
+    <AssemblyName>AlgorithmProblems</AssemblyName>
+    <RootNamespace>AlgorithmProblems</RootNamespace>
+    <NoWin32Manifest>true</NoWin32Manifest>
+  </PropertyGroup>
+
+</Project>

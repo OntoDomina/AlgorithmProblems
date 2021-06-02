@@ -1,0 +1,5 @@
+# excluing files starting with .
+.*
+!.gitignore
+*/bin
+*/obj
