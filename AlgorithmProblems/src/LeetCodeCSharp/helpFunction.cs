@@ -1,4 +1,4 @@
-namespace Solutions.HelpFunctions{
+namespace HelpFunctions{
     using System;
     using System.Linq;
     using System.Collections.Generic;
@@ -17,6 +17,10 @@ namespace Solutions.HelpFunctions{
             foreach (var x in list) {
                 fn(x);
             }
+        }
+
+        public static void MyAssert(bool v, string str = ""){
+            if(!v) {throw new Exception(str);}
         }
 
         [Conditional("LOCAL")]

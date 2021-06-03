@@ -4,8 +4,9 @@
  * [300] 最长递增子序列
  */
 
-
-namespace Solutions
+// 💡 A better way would be to build a forest of tree 🌲
+// representing the partial order of determined DP[] value
+namespace LeetCode
 {
     namespace IncreasingSubsequence300
     {
